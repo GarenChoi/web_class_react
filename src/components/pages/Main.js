@@ -62,14 +62,18 @@ class Main extends React.Component {
                 delay: 2.8,
                 ease: "bounce.in"
             });
-        }, 1000)
+        }, 1700)
     }
 
     componentDidMount(){
         setTimeout(() => {
-            this.setState({isLoading:false});
+            document.getElementById("loading").classList.remove("loading__active");
+            document.querySelector("body").classList.remove("light");
+            setTimeout(()=>{
+                this.setState({isLoading:false});
+            },1600)
             this.getSite();
-        }, 3000)
+        }, 2000)
     }
 
     render(){
