@@ -1,0 +1,44 @@
+//reference
+.reference__inner {
+    font-family: var(--subKor_font);
+    padding-bottom: 40vmax;
+
+    h3 {
+        color: var(--white);
+        font-size: 1.9em;
+        font-weight: 300;
+        margin-bottom: 2vh;
+    }
+    table {
+        border-collapse: collapse;
+        font-family: var(--subKor_font);
+        font-size: 16px;
+        font-weight: 300;
+    }
+    tr {
+        color: var(--white);
+        border-top: 1px solid var(--white);
+
+        td {
+            padding: 2vw 0;
+        }
+    }
+    tr:last-child {
+        border-bottom: 2px solid var(--white);
+    }
+}
+
+.reference__cont.light{
+    background-color: var(--light_bg);
+
+    h3 {
+        color: var(--black);
+    }
+
+    tr {
+        border-color: var(--black);
+    }
+    td {
+        color: var(--black);
+    }
+}
