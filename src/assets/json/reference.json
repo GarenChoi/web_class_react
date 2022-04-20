@@ -102,24 +102,28 @@
             },
             {
                 "id": 5,
-                "title": "",
-                "desc": "",
-                "element": "",
-                "tag": "",
-                "version": "",
+                "title": "<area>",
+                "desc": "<area> 태그는 이미지 맵의 영역을 정의합니다. 이미지 위에 가상의 영역을 만들어서 클릭을 유도할 수 있습니다. 하지만 접근성에 있어 좋지 않기 때문에 현재는 많이 사용하지 않습니다.",
+                "element": "인라인 요소(Inline Element)",
+                "tag": "닫는 태그 사용(<area> ~ </area>)",
+                "version": "HTML4",
                 "view": "",
-                "use": "",
+                "use": "★☆☆☆☆",
                 "image": "",
                 "link": "",
                 "Definition": [
-
+                    "<area> 태그는 이미지 위에 영역 링크를 정의 할 때 간편하게 사용할 수 있습니다.",
+                    "<area> 태그는 <map>, <img> 태그와 같이 사용합니다.",
+                    "<area> 태그 shape 속성을 통해 영역을 모양(rect, circle, poly)을 설정합니다.",
+                    "<area> 태그 cords 속성을 통해 영역을 위치를 설정합니다. cords의 위치 값은 프로그램을 통해 좌표 값을 얻는 방법이 쉽습니다.",
+                    "<map> 태그의 name 속성과 이미지의 usemap 속성이 일치해야 적용됩니다.",
+                    "이미지 위에 영역을 설정하고 링크를 설정하는 방법은 많이 사용하지 않습니다. 직접 링크를 걸고 사용하는 것을 추천합니다.",
+                    "이미지 맵은 위치가 고정적이기 때문에 반응형 사이트에서 적용 할 수 없습니다."
                 ],
-                "Accessibility": [
-
-                ],
+                "Accessibility": [],
                 "CrossBroswing": "",
-                "mdn": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a",
-                "w3c": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"
+                "mdn": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area",
+                "w3c": ""
             }
         ]
     }
