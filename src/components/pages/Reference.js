@@ -7,14 +7,24 @@ import Title from "../layout/Title";
 import Contact from "../layout/Contact";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
+import axios from "axios";
 
 class Reference extends React.Component {
     state = {
         isLoading: true,
+        refers: [],
     }
 
-    getSite = () => {
-        setTimeout(() => {
+    getSite = async () => {
+        const {
+            data: {
+                data: {refer},
+            },
+        } = await axios.get("https://garenchoi.github.io/web_class_react/src/assets/json/reference.json");
+        console.log(refer);
+        this.setState({refers: refer, isLoading: false})
+
+        setTimeout(()=>{
             gsap.to("#header", {
                 duration: 0.8,
                 top: 0,
@@ -51,7 +61,7 @@ class Reference extends React.Component {
                 delay: 1.4,
                 ease: "bounce.inOut"
             });
-        }, 10)
+        },10)
     }
 
     getPorts = () => {
@@ -70,7 +80,7 @@ class Reference extends React.Component {
     }
 
     render(){
-        const {isLoading} = this.state;
+        const {isLoading,refers} = this.state;
 
         return (
             <>
@@ -81,7 +91,7 @@ class Reference extends React.Component {
                             <Header color="light" />
                             <Contents>
                                 <Title title={["Reference","book"]} color="light" />
-                                <ReferCont color="light" />
+                                <ReferCont color="light" refer={refers} />
                                 <Contact />
                             </Contents>
                             <Footer color="light" />
