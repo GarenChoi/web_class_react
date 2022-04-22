@@ -79,6 +79,23 @@ class ReferDetail extends React.Component {
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <h4>정의(Definition)</h4>
+                                        <ul>
+                                            {location.state.Definition.map((info) => (
+                                                <li>{info}</li>
+                                            ))}
+                                        </ul>
+                                        <h4>접근성(Accessibility)</h4>
+                                        <ul>
+                                            {location.state.Accessibility.map((info) => (
+                                                <li>{info}</li>
+                                            ))}
+                                        </ul>
+                                        <h4>참고 사이트</h4>
+                                        <ul>
+                                            <li>MDN<a href={location.state.mdn} target="_blank">{location.state.mdn}</a></li>
+                                            <li>W3C<a href={location.state.w3c} target="_blank">{location.state.w3c}</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

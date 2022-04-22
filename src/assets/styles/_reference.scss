@@ -90,10 +90,43 @@
         border-bottom: 1px solid var(--light_bg);
         border-left: 1px solid var(--light_bg);
     }
+    h4 {
+        color: var(--white);
+        font-size: 24px;
+        margin-top: 5vh;
+        margin-bottom: 4px;
+    }
+    li {
+        color: var(--white);
+        list-style: inside;
+        line-height: 2em;
+        a {
+            color: var(--white);
+        }
+    }
 }
 
 .refer__cont.light{
     background-color: var(--light_bg);
+
+    h2 {
+        color: var(--black);
+    }
+
+    .refer__list {
+        border-top: 2px solid var(--dark_bg);
+        border-bottom: 1px solid var(--dark_bg);
+        a {
+            color: var(--black);
+            border-bottom: 1px solid var(--dark_bg);
+
+            &:hover {
+                background: var(--dark_bg);
+                color: var(--white);
+            }
+        }
+    
+    }
 
     .refer__table {
         .table {
@@ -103,6 +136,15 @@
             color: var(--black);
             border-bottom: 1px solid var(--dark_bg);
             border-left: 1px solid var(--dark_bg);
+        }
+        h4 {
+            color: var(--black);
+        }
+        li {
+            color: var(--black);
+            a {
+                color: var(--black);
+            }
         }
     }
 

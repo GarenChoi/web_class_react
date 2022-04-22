@@ -80,13 +80,13 @@ class Reference extends React.Component {
         return (
             <>
                 {isLoading ? (
-                    <Loading color="" />
+                    <Loading color="light" />
                 ) : (
                         <>
-                            <Header color=""/>
+                            <Header color="light"/>
                             <Contents>
-                                <Title title={["reference","book"]} color="" />
-                                <section className="refer__cont">
+                                <Title title={["reference","book"]} color="light" />
+                                <section className="refer__cont light">
                                     <div className="container">
                                         <div className="refer__inner">
                                             <h2>CSS</h2>
@@ -118,7 +118,7 @@ class Reference extends React.Component {
                                 </section>
                                 <Contact />
                             </Contents>
-                            <Footer color="" />
+                            <Footer color="light" />
                         </>
                     )
                 }
