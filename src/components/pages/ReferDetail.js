@@ -3,6 +3,7 @@ import Header from '../layout/Header';
 import Contents from '../layout/Contents';
 import Footer from '../layout/Footer';
 import { gsap } from "gsap";
+import {Link} from 'react-router-dom'
 
 // function ReferDetail(props) {
 //     console.log(props)
@@ -12,6 +13,7 @@ import { gsap } from "gsap";
 // }
 
 class ReferDetail extends React.Component {
+
     componentDidMount(){
         const {location, history} = this.props;
         if(location.state === undefined){
@@ -30,6 +32,14 @@ class ReferDetail extends React.Component {
             bottom: 0,
             delay: 0.2
         });
+    }
+
+    checked(el,title){
+        if(el){
+            return (
+                <li>{title} : <a href={el} target="_blank">{el}</a></li>
+            )
+        }
     }
 
     render(){
@@ -79,13 +89,22 @@ class ReferDetail extends React.Component {
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <h4>정의(Definition)</h4>
+                                        {location.state.Definition.map((info) => {
+                                            if(location.state.Definition[0]==info){
+                                                return <h4>정의(Definition)</h4>
+                                            }
+                                        })}
                                         <ul>
                                             {location.state.Definition.map((info) => (
                                                 <li>{info}</li>
                                             ))}
                                         </ul>
-                                        <h4>접근성(Accessibility)</h4>
+                                        
+                                        {location.state.Accessibility.map((info) => {
+                                            if(location.state.Accessibility[0]==info){
+                                                return <h4>접근성(Accessibility)</h4>
+                                            }
+                                        })}
                                         <ul>
                                             {location.state.Accessibility.map((info) => (
                                                 <li>{info}</li>
@@ -93,9 +112,15 @@ class ReferDetail extends React.Component {
                                         </ul>
                                         <h4>참고 사이트</h4>
                                         <ul>
-                                            <li>MDN<a href={location.state.mdn} target="_blank">{location.state.mdn}</a></li>
-                                            <li>W3C<a href={location.state.w3c} target="_blank">{location.state.w3c}</a></li>
+                                            {this.checked(`${location.state.mdn}`,"MDN")}
+                                            {this.checked(`${location.state.w3c}`,"W3C")}
                                         </ul>
+                                    </div>
+                                    <div className='linkList'>
+                                        <Link to={{
+                                            pathname: "Reference",
+                                        }}> 목록으로
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

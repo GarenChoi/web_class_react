@@ -8,10 +8,12 @@ import Youtube from './components/pages/Youtube';
 import Contact from './components/pages/Contact';
 import Portfolio from './components/pages/Portfolio';
 import ReferDetail from './components/pages/ReferDetail';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Route path='/' exact component={Main} />
       <Route path='/about' exact component={About} />
       <Route path='/reference' exact component={Reference} />

@@ -9,6 +9,16 @@
         font-size: 2.0rem;
         margin-bottom: 1rem;
     }
+    .linkList {
+        width: 100%;
+        text-align: right;
+
+        a {
+            background: var(--dark_bg);
+            color: var(--light_bg);
+            padding: 3px 15px;
+        }
+    }
     // table {
     //     border-collapse: collapse;
     //     font-family: var(--subKor_font);
@@ -129,6 +139,10 @@
     }
 
     .refer__table {
+        p {
+            background: var(--dark_bg);
+            color: var(--light_bg);
+        }
         .table {
             border: 1px solid var(--dark_bg);
         }
