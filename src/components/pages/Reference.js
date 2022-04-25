@@ -69,6 +69,7 @@ class Reference extends React.Component {
     componentDidMount(){
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active");
+            document.querySelector("body").classList.add("light");
             this.getRefers();
         }, 2000);
     }
