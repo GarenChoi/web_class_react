@@ -7,6 +7,7 @@ body.light {
 #loading.loading__active {
     opacity: 1;
     transition: all 1.6s;
+    z-index: 99999;
 }
 #loading.light {
     background: var(--light_bg);
@@ -23,6 +24,7 @@ body.light {
     height: 100%;
     z-index: 99999;
     opacity: 0;
+    z-index: -1;
     transition: all 1.6s;
 }
 .loading__text {

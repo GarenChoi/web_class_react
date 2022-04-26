@@ -1,4 +1,5 @@
 .script__inner {
+    opacity: 0;
     color: var(--white);
     font-family: var(--kor_font);
 
@@ -48,6 +49,16 @@
 
 .script__inner:nth-child(2) {
     margin: 18vh 0;
+}
+.script__cont.light {
+    background: var(--light_bg);
+    .script__inner {
+        color: var(--black);
+
+        li {
+            border: 1px solid var(--black);
+        }
+    }
 }
 
 @media(max-width: 700px){

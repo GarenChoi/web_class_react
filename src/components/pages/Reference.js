@@ -53,7 +53,7 @@ class Reference extends React.Component {
                 delay: 1.4,
                 ease: "bounce.inOut"
             });
-        })
+        },10)
     }
 
     getRefers = async () => {

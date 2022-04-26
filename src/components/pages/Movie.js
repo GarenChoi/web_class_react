@@ -3,19 +3,18 @@ import Header from "../layout/Header";
 import Contents from "../layout/Contents";
 import Footer from "../layout/Footer";
 import Title from "../layout/Title";
+import MovieSearch from "../includes/MovieSearch";
+import MovieList from "../includes/MovieList";
 import Contact from "../layout/Contact";
-import YoutubeList  from "../includes/YoutubeList";
-import YoutubeSearch  from "../includes/YoutubeSearch";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 
-function Youtube() {
+function Movie() {
     const [videos, setVideos] = useState([]);
-
+    
     const mainAnimation = () => {
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active");
-            // document.querySelector("body").classList.add("light");
             gsap.to("#header", {
                 duration: 0.8,
                 top: 0,
@@ -46,13 +45,13 @@ function Youtube() {
                 opacity: 1,
                 delay: 1.0,
             });
-            gsap.to(".youtube__list", {
+            gsap.to(".movie__list", {
                 duration: 1.0,
                 opacity: 1,
                 delay: 1.4,
                 ease: "back.out(1.7)"
             });
-            gsap.to(".youtube__search", {
+            gsap.to(".movie__search", {
                 duration: 1.0,
                 opacity: 1,
                 delay: 1.6,
@@ -63,42 +62,42 @@ function Youtube() {
 
     const search = (query) => {
         var requestOptions = {
-            method: 'GET', 
+            method: 'GET',
             redirect: 'follow'
-        };
+          };
           
-        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=${query}&type=vedio&key=${process.env.REACT_APP_YOUTUBE_API}&type=video`, requestOptions)
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API}&query=${query}`, requestOptions)
             .then(response => response.json())
-            .then(result => setVideos(result.items))
+            .then(result => setVideos(result.results))
             .catch(error => console.log('error', error));
     }
 
     useEffect(() => {
         var requestOptions = {
-            method: 'GET', 
+            method: 'GET',
             redirect: 'follow'
           };
-          
-          fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4&type=vedio&key=${process.env.REACT_APP_YOUTUBE_API}&type=video`, requestOptions)
+        //   ${process.env.MOVIE_APP_API}
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API}&query=war`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                setVideos(result.items);
+                setVideos(result.results);
                 mainAnimation();
             })
             .catch(error => console.log('error', error));
-    }, []);
+    }, [])
 
     return (
         <>
             <Loading />
             <Header />
             <Contents>
-                <Title title={["Youtube","reference"]} />
-                <section className='youtube__cont'>
+                <Title title={["movie","reference"]} />
+                <section className='movie__cont'>
                     <div className="container">
-                        <div className='youtube__inner'>
-                            <YoutubeSearch onSearch={search} />
-                            <YoutubeList videos={videos}/>
+                        <div className='movie__inner'>
+                            <MovieSearch onSearch={search} />
+                            <MovieList videos={videos}/>
                         </div>
                     </div>
                 </section>
@@ -106,8 +105,7 @@ function Youtube() {
             </Contents>
             <Footer />
         </>
-
     )
 }
 
-export default Youtube;
+export default Movie;

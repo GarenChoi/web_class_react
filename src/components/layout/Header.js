@@ -15,6 +15,7 @@ function Header(props){
                     <li><Link to="/About">About</Link></li>
                     <li><Link to="/Reference">Reference</Link></li>
                     <li><Link to="/Youtube">Youtube</Link></li>
+                    <li><Link to="/Movie">Movie</Link></li>
                     <li><Link to="/Script">Script</Link></li>
                     <li><Link to="/Contact">Contact</Link></li>
                 </ul>
