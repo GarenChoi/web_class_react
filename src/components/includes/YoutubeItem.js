@@ -3,7 +3,7 @@ import React from 'react'
 function YoutubeItem(props) {
   return (
     <li>
-        <a href={`https://www.youtube.com/watch?v=${props.video.id.videoId}`}>
+        <a href={`https://www.youtube.com/watch?v=${props.video.id.videoId}`} target="_blank" rel="noopener noreferrer">
             <img 
                 src={props.video.snippet.thumbnails.medium.url} 
                 alt={props.video.snippet.title} 
